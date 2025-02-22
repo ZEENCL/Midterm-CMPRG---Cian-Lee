@@ -1,0 +1,56 @@
+class Dog {
+    private String name;
+    private String breed;
+
+    // Constructor
+    public Dog(String name, String breed) {
+        this.name = name;
+        this.breed = breed;
+    }
+
+    // Setter methods
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setBreed(String breed) {
+        this.breed = breed;
+    }
+
+    // Getter methods
+    public String getName() {
+        return name;
+    }
+
+    public String getBreed() {
+        return breed;
+    }
+
+    public static void main(String[] args) {
+        // Creating an array of Dog objects
+        Dog[] dogs = new Dog[2];
+        dogs[0] = new Dog("Buddy", "Golden Retriever");
+        dogs[1] = new Dog("Rocky", "Bulldog");
+
+        // Using a for loop to update attributes of each dog
+        for (Dog dog : dogs) {
+            // Update both name and breed:
+            // For demonstration, appending " Updated" to the name,
+            // and changing the breed to a new value
+            dog.setName(dog.getName() + " Updated");
+
+            // For example, if the breed is "Golden Retriever", update it to "Labrador"
+            // Else update it to "Beagle"
+            if (dog.getBreed().equals("Golden Retriever")) {
+                dog.setBreed("Labrador");
+            } else {
+                dog.setBreed("Beagle");
+            }
+        }
+
+        // Using a for loop to print the updated dog details
+        for (Dog dog : dogs) {
+            System.out.println("Dog: Name - " + dog.getName() + ", Breed - " + dog.getBreed());
+        }
+    }
+}

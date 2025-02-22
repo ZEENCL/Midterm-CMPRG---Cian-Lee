@@ -1,0 +1,45 @@
+// Cian Stephen M. Lee - Midterm Output
+class Rectangle
+{
+	// Declaration
+    private double width;
+    private double height;
+
+    // Constructor
+    public Rectangle(double width, double height)
+    {
+        this.width = width;
+        this.height = height;
+    }
+
+    // Method to calculate area
+    public double getArea()
+    {
+        return width * height;
+    }
+
+    // Method to calculate perimeter
+    public double getPerimeter()
+    {
+        return 2 * (width + height);
+    }
+
+    public static void main(String[] args)
+    {
+        // Array of Rectangle objects
+        Rectangle[] rectangles = new Rectangle[3];
+        rectangles[0] = new Rectangle(5, 10);
+        rectangles[1] = new Rectangle(3.5, 7.2);
+        rectangles[2] = new Rectangle(6, 8);
+
+        // Display area and perimeter for each rectangle
+        System.out.println("----= RECTANGLES =----\n");
+        for (Rectangle rect : rectangles)
+        {
+            System.out.println("Rectangle: " + rect.width + " x " + rect.height);
+            System.out.println("Area: " + rect.getArea());
+            System.out.println("Perimeter: " + rect.getPerimeter());
+            System.out.println("\n----------------------\n");
+        }
+    }
+}
